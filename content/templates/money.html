@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container-fluid" style="background-color:#1976d2;color:white;">
+    <br>
+</div>
+<div class="row equal">
+    <div class="col-sm-3" style="background-color:white;">
+        <div class="footer-widget">
+            <br>
+        </div>
+    </div>
+    <div class="col-sm-6" style="color:#0d47a1;background-color:white;border-radius:0px;color:#0d47a1;" align="center">
+    <div class="footer-widget">
+        <div class="container">
+    <br>
+    <br>
+            <h3><b>Position Title:</b></h3>
+    <h2>{{position_title}}</h2>
+    <br>
+            <h3><b>Company Name:</b></h3>
+    <h2>{{client_name}}</h2>
+    <br>
+            <h3><b>Posting Date:</b></h3>
+    <h2>{{date}}</h2>
+    <br>
+            <h3><b>Position Location:</b></h3>
+    <h2>{{position_city}}, {% for v in states %}{{v}}<br>{% endfor %}</h2>
+    <br>
+    <h3><b>Position Description:</b></h3>
+    <h4>{{position_description}}</h4>
+    <br>
+            <h3><b>Position Link:</b></h3>
+    <h4>{{position_link}}</h4>
+    <br>
+    <br>
+            <h3><b>Specialty Areas:</b></h3>
+    {% for l in legal_list %}<h4>{{l}}</h4>{% endfor %}
+    <br>
+    <hr>
+    <p>By clicking the "Submit" button below, you acknowledge the information above is correct. If you want to change anything, please go back and do so now.</p>
+    <hr>
+    <form action="checkout/" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <br>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-3" style="background-color:white;">
+        <div class="footer-widget">
+            <br>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="background-color:#1976d2;color:white;">
+    <br>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid" style="background-color:#1976d2;color:white;">
+    <br>
+</div>
+<div class="row equal">
+    <div class="col-sm-3" style="background-color:white;">
+        <div class="footer-widget">
+            <br>
+        </div>
+    </div>
+    <div class="col-sm-6" style="color:#0d47a1;background-color:white;border-radius:0px;color:#0d47a1;" align="center">
+        <div class="footer-widget">
+            <div class="container">
+            <form method=post >
+                  {% csrf_token %}
+                  <br>
+                  <h4 align="left">Position Title:</h4>
+                  <h4>{{form.position_title}}</h4>
+                  <hr>
+                   <h4 align="left">Company Name:</h4>
+                  <h4>{{form.client_name}}</h4>
+                  <hr>
+                  <h4 align="left">Date of Posting:</h4>
+                  <h4>{{form.date}}</h4>
+                  <hr>
+                  <h4 align="left">State:</h4>
+                  <h4>{{form.states}}</h4>
+                  <hr>
+                  <h4 align="left">City:</h4>
+                  <h4>{{form.position_city}}</h4>
+                  <hr>
+                  <h4 align="left">Description:</h4>
+                  <h4>{{form.position_description}}</h4>
+                  <h6>Please visit our FAQ page for a sample position description.</h6>
+                  <hr>
+                  <h4 align="left">Position Link:</h4>
+                  <h4>{{form.position_link}}</h4>
+                  <h6>Optional.</h6>
+                  <hr>
+                  <h4 align="left">Speciality Areas</h4>
+                  <nav style="height:250px;width:100%;overflow:hidden;overflow-y:scroll;background-color:white;border-radius:8px;border-style:solid;border-color:#e0e0e0;border-width:1px;">
+                        <h5 align="left" style="background-color:white;border-radius:5px;color:#094bba;"><br>{{form.legal_field}}<br></h5>
+                  </nav>
+                  <h6>Select all that apply.</h6>
+                  <br>
+                  <h5>By clicking the checkbox below you have read and acknowledged our <a href="http://127.0.0.1:8000/legal/">Terms of Service, Privacy Statement, and Cookies Policy</a>.</h5>
+                  <h4>{{form.accept_terms}}</h4>
+                  <br>
+                  <button  type="submit" class="btn btn-success">Continue</button>
+                  <br>
+                  <br>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3" style="background-color:white;">
+        <div class="footer-widget">
+            <br>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="background-color:#1976d2;color:white;">
+    <br>
+</div>
+{% endblock %}
+
