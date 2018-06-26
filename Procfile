@@ -1,1 +1,1 @@
-web: gunicorn nmbb.wsgi --log-file-
+web: gunicorn nmbb.wsgi --log-file -
