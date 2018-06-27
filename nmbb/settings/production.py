@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'nmbb.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 import psycopg2
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = os.environ['HEROKU_POSTGRESQL_ROSE_URL']
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
