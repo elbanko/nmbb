@@ -1,5 +1,5 @@
 import os
-import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -70,13 +70,14 @@ WSGI_APPLICATION = 'nmbb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3kgdfqqikc0ic',
+        'USER': 'ymhttwbdxidlxi',
+        'PASSWORD': '44835833bd85d21e598d05b06d59f43f5a3d29eff61285aa5e5b8ce17692a150',
+        'HOST': 'ec2-54-83-60-13.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
