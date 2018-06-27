@@ -67,11 +67,11 @@ WSGI_APPLICATION = 'nmbb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASE_URL = os.environ['HEROKU_POSTGRESQL_ROSE_URL']
+DATABASE_URL = os.environ.get('HEROKU_POSTGRESQL_ROSE_URL')
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
-DATABASES = { 'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+DATABASES = {'default': {'ENGINE': dj_database_url.config(conn_max_age=600, ssl_require=True)}}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
