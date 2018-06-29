@@ -27,6 +27,6 @@ class PostingForm(ModelForm):
                 attrs={'list-style-type': None, 'required': False, }),
             'accept_terms': forms.CheckboxInput(
                 attrs={'class': 'form-control', 'placeholder': '', 'required': True, }),
-            'states': forms.SelectMultiple(
+            'states': forms.Select(
                 attrs={'class': 'form-control', 'list-style-type': None, 'required': False, })
         }
